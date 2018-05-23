@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 渠道id唯一，default表示未找到对应版本时，以此版本做验证， group对应包名-->
+<service namespace= "com.linekong.login.auth.service.impl">
+
+	<channel id="1" group="youku">
+		<validate version="2.7.1" default="true">
+			<required>
+				<request>token</request>
+				<config>goUrl,secretkey,appkey</config>
+			</required>
+			<callback class="YoukuChannelValidateServiceImpl" />
+		</validate>
+	</channel>
+
+	<channel id="2" group="xiaomi">
+		<validate version="4.6.11" default="true">
+			<required>
+				<request>token,userId</request>
+				<config>goUrl,secretkey,appid</config>
+			</required>
+			<callback class="XiaomiChannelValidateServiceImpl" />
+		</validate>
+	</channel>
+	
+	<channel id="3" group="pps">
+		<validate version="5.7.0" default="true">
+			<required>
+				<request>time,sign,userId</request>
+				<config>appkey</config>
+			</required>
+			<callback class="PpsChannelValidateServiceImpl" />
+		</validate>
+	</channel>	
+	
+	<channel id="4" group="oppo">
+		<validate version="2.0.0" default="true">
+			<required>
+				<request>token,ssoid</request>
+				<config>goUrl,secretkey,appid,appkey</config>
+			</required>
+			<callback class="OppoChannelValidateServiceImpl" />
+		</validate>
+	</channel>
+	
+	<channel id="5" group="baidu">
+		<validate version="3.7.4"  default="true">
+			<required>
+				<request>token</request>
+				<config>goUrl,secretkey,appid</config>
+			</required>
+			<callback class="BaiduChannelValidateServiceImpl" />
+		</validate>
+		<validate version="4.0.4" ref="3.7.4"></validate>
+	</channel>
+	
+	<channel id="6" group="vivo">
+		<validate version="3.0.0" default="true">
+			<required>
+				<request>token</request>
+				<config>goUrl</config>
+			</required>
+			<callback class="VivoChannelValidateServiceImpl" />
+		</validate>
+	</channel>
+	
+	<channel id="7" group="guopan">
+		<validate version="3.0.2.4" default="true">
+			<required>
+				<request>token,gameuin</request>
+				<config>goUrl,secretkey,appid</config>
+			</required>
+			<callback class="GuopanChannelValidateServiceImpl" />
+		</validate>
+	</channel>
+	
+	<channel id="8" group="meizu">
+		<validate version="4.1.2" default="true">
+			<required>
+				<request>token</request>
+				<config>goUrl,secretkey,appid</config>
+			</required>
+			<callback class="MeizuChannelValidateServiceImpl" />
+		</validate>
+	</channel>	
+	
+	<channel id="9" group="anzhi">
+		<validate version="4.2.1" default="true">
+			<required>
+				<request>token,deviceid,requesturl</request>
+				<config>secretkey,appkey</config>
+			</required>
+			<callback class="AnzhiChannelValidateServiceImpl" />
+		</validate>
+	</channel>	
+
+	<channel id="10" group="C4399">
+		<validate version="2.11.0.9" default="true">
+			<required>
+				<request>token</request>
+				<config>goUrl</config>
+			</required>
+			<callback class="C4399ChannelValidateServiceImpl" />
+		</validate>
+	</channel>	
+
+	<channel id="11" group="huawei">
+		<validate version="7.2.3.300">
+			<required>
+				<request>gameAuthSign,ts,userId</request>
+				<config>appid,secretkey</config>
+			</required>
+			<callback class="HuaweiChannelValidateServiceImpl" />
+		</validate>
+		<validate version="7.1.1.301" ref="7.2.3.300"></validate>
+        <validate version="2.5.3.003" default="true">
+            <required>
+                <request>gameAuthSign,ts,userId,playerLevel</request>
+                <config>appid,secretkey,publickey,cpid,goUrl</config>
+            </required>
+            <callback class="HuaweiChannelValidateServiceImplV2"></callback>
+        </validate>
+	</channel>	
+	
+	<channel id="12" group="toutiao">
+		<validate version="3.1.4" default="true">
+			<required>
+				<request>token,checksafe,userId</request>
+				<config>goUrl,appkey</config>
+			</required>
+			<callback class="ToutiaoChannelValidateServiceImpl" />
+		</validate>
+	</channel>	
+	
+	<channel id="13" group="pyw">
+		<validate version="2.2.7" default="true">
+			<required>
+				<request>token</request>
+				<config>goUrl</config>
+			</required>
+			<callback class="PywChannelValidateServiceImpl" />
+		</validate>
+	</channel>	
+	
+	<channel id="15" group="ali">
+		<validate version="7.1.3" default="true">
+			<required>
+				<request>token</request>
+				<config>goUrl,appkey,gameid</config>
+			</required>
+			<callback class="UCChannelValidateServiceImpl" />
+		</validate>
+		<validate version="2.0.8" ref="7.1.3"></validate>
+	</channel>
+	
+	<channel id="16" group="lenovo">
+		<validate version="2.6.5" default="true">
+			<required>
+				<request>token</request>
+				<config>goUrl,appid</config>
+			</required>
+			<callback class="LenovoChannelValidateServiceImpl" />
+		</validate>
+	</channel>
+	
+	<channel id="17" group="gionee">
+		<validate version="4.0.6" default="true">
+			<required>
+				<request>token</request>
+				<config>secretkey,appkey,host,url</config>
+			</required>
+			<callback class="GioneeChannelValidateServiceImpl" />
+		</validate>
+	</channel>
+
+    <channel id="21" group="leyou">
+        <validate version="2.3.0" default="true">
+            <required>
+                <request>token,userId</request>
+                <config>goUrl</config>
+            </required>
+            <callback class="LeyouChannelValidateServiceImpl" />
+        </validate>
+    </channel>
+
+	<channel id="22" group="C8868">
+		<validate version="2.4.0" default="true">
+			<required>
+				<request>token</request>
+				<config>goUrl,appid,appkey,gameId</config>
+			</required>
+			<callback class="C8868ChannelValidateServiceImpl" />
+		</validate>
+	</channel>
+	
+	<channel id="24" group="letv">
+		<validate version="2.2.7" default="true">
+			<required>
+				<request>token</request>
+				<config>goUrl,appkey</config>
+			</required>
+			<callback class="LephoneChannelValidateServiceImpl" />
+		</validate>
+	</channel>
+	
+	<channel id="27" group="mzw">
+		<validate version="3.3.6.4" default="true">
+			<required>
+				<request>token</request>
+				<config>goUrl</config>
+			</required>
+			<callback class="MzwChannelValidateServiceImpl" />
+		</validate>
+	</channel>
+	
+	<channel id="29" group="sina">
+		<validate version="1.2.3" default="true">
+			<required>
+				<request>token,deviceid,userId</request>
+				<config>goUrl,appkey,secretkey</config>
+			</required>
+			<callback class="SinaChannelValidateServiceImpl" />
+		</validate>
+		<validate version="1.4.4.226" ref="1.2.3"></validate>
+	</channel>
+	
+	<channel id="30" group="pptv">
+		<validate version="6.0.0" default="true">
+			<required>
+				<request>token,username</request>
+				<config>app,goUrl,type</config>
+			</required>
+			<callback class="PptvChannelValidateServiceImpl" />
+		</validate>
+	</channel>
+	
+	<channel id="32" group="sogou">
+		<validate version="2.1.0" default="true">
+			<required>
+				<request>token,userId</request>
+				<config>appid,goUrl,secretkey</config>
+			</required>
+			<callback class="SogouChannelValidateServiceImpl" />
+		</validate>
+	</channel>
+	
+	<channel id="33" group="papa">
+		<validate version="2.4.0" default="true">
+			<required>
+				<request>token,userId</request>
+				<config>secretkey,goUrl,appkey</config>
+			</required>
+			<callback class="PapaChannelValidateServiceImpl" />
+		</validate>
+	</channel>
+	
+	<channel id="34" group="ali">
+		<validate version="6.0.0" default="true">
+			<required>
+				<request>token</request>
+				<config>goUrl,appkey,gameid</config>
+			</required>
+			<callback class="WDJChannelValidateServiceImpl" />
+		</validate>
+	</channel>
+	
+	<channel id="35" group="downjoy">
+		<validate version="4.3.5" default="true">
+			<required>
+				<request>token,userId</request>
+				<config>goUrl,appkey,appid</config>
+			</required>
+			<callback class="DownjoyChannelValidateServiceImpl" />
+		</validate>
+	</channel>
+	
+	<channel id="36" group="cool">
+		<validate version="2.1.8" default="true">
+			<required>
+				<request>code</request>
+				<config>grant_type,appkey,goUrl,appid</config>
+			</required>
+			<callback class="CoolChannelValidateServiceImpl" />
+		</validate>
+	</channel>
+	
+	<channel id="37" group="samsung">
+		<validate version="4.0.2" default="true">
+			<required>
+				<request>token</request>
+				<config>privatekey,publickey,goUrl,appid</config>
+			</required>
+			<callback class="SamSungChannelValidateServiceImpl" />
+		</validate>
+	</channel>
+	
+	<channel id="38" group="yingyonghui">
+		<validate version="7.4.0" default="true">
+			<required>
+				<request>token</request>
+				<config>loginkey,loginid,goUrl</config>
+			</required>
+			<callback class="YingyonghuiChannelValidateServiceImpl" />
+		</validate>
+	</channel>
+	
+	<channel id="40" group="ewan">
+		<validate version="2.2.1" default="true">
+			<required>
+				<request>openid,token,sign</request>
+				<config>appkey</config>
+			</required>
+			<callback class="EwanChannelValidateServiceImpl" />
+		</validate>
+	</channel>
+	
+	<!-- 坚果渠道 -->
+    <channel id="41" group="jianguo">
+        <validate version="7.2.0" default="true">
+            <required>
+                <request>token</request>
+                <config>goUrl,appid,appkey</config>
+            </required>
+            <callback class="JianguoChannelValidateServiceImpl" />
+        </validate>
+    </channel>
+	
+	<!-- 57K渠道 -->
+	<channel id="42" group="C57K">
+		<validate version="7.2.0" default="true">
+			<required>
+				<request>token</request>
+				<config>appkey,appid,goUrl</config>
+			</required>
+			<callback class="C57kChannelValidateServiceImpl" />
+		</validate>
+	</channel>
+	<channel id="46" group="cgame">
+		<validate version="1.1.9" default="true">
+			<required>
+				<request>token</request>
+				<config>appkey,goUrl,appid</config>
+			</required>
+			<callback class="CGameChannelValidateServiceImpl" />
+		</validate>
+	</channel>
+	
+	<channel id="51" group="douyu">
+		<validate version="1.1.0" default="true">
+			<required>
+				<request>token</request>
+				<config>secretkey,goUrl</config>
+			</required>
+			<callback class="DouyuChannelValidateServiceImpl" />
+		</validate>
+	</channel>
+	
+	<channel id="57" group="tecent">
+		<validate version="1.3.6" default="true">
+			<required>
+				<request>openid,token,type</request>
+				<config>appkey_SQ,appkey_WX,goUrl_SQ,goUrl_WX,appid_SQ,appid_WX</config>
+			</required>
+			<callback class="TecentChannelValidateServiceImpl" />
+		</validate>
+	</channel>
+
+    <channel id="58" group="kuaikan">
+        <validate version="2.1.0" default="true">
+            <required>
+                <request>token,userId</request>
+                <config>appid,secretkey,goUrl</config>
+            </required>
+            <callback class="KuaikanChannelValidateServiceImpl" />
+        </validate>
+    </channel>
+
+    <channel id="59" group="qihu360">
+        <validate version="2.0.0" default="true">
+            <required>
+                <request>token</request>
+                <config>goUrl</config>
+            </required>
+            <callback class="Qihu360ChannelValidateServiceImpl" />
+        </validate>
+    </channel>
+
+    <channel id="60" group="nubiya">
+        <validate version="2.0.1" default="true">
+            <required>
+                <request>userId,uid,session_id</request>
+                <config>appid,secretkey,goUrl</config>
+            </required>
+            <callback class="NubiyaChannelValidateServiceImpl" />
+        </validate>
+    </channel>
+
+    <channel id="61" group="tt">
+        <validate version="2.2.3" default="true">
+            <required>
+                <request>token,userId</request>
+                <config>gameid,secretkey,goUrl</config>
+            </required>
+            <callback class="TTChannelValidateServiceImpl" />
+        </validate>
+    </channel>
+
+    <channel id="62" group="haodong">
+        <validate version="1.1.0" default="true">
+            <required>
+                <request>token,userId</request>
+                <config>secretkey,goUrl</config>
+            </required>
+            <callback class="HaodongChannelValidateServiceImpl" />
+        </validate>
+    </channel>
+
+    <channel id="63" group="caohua">
+        <validate version="1.3.8" default="true">
+            <required>
+                <request>token,userId</request>
+                <config>appid,appkey,goUrl</config>
+            </required>
+            <callback class="CHAChannelValidateServiceImpl" />
+        </validate>
+    </channel>
+
+    <channel id="64" group="qik">
+        <validate version="6.2.0" default="true">
+            <required>
+                <request>vkey,userId</request>
+                <config>goUrl</config>
+            </required>
+            <callback class="QikChannelValidateServiceImpl" />
+        </validate>
+    </channel>
+
+    <channel id="65" group="songshu">
+        <validate version="1.0.0" default="true">
+            <required>
+                <request>token</request>
+                <config>goUrl</config>
+            </required>
+            <callback class="SongshuChannelValidateServiceImpl" />
+        </validate>
+    </channel>
+
+    <channel id="66" group="mzpoly">
+        <validate version="3.1.0" default="true">
+            <required>
+                <request>token</request>
+                <config>goUrl,appid</config>
+            </required>
+            <callback class="MZPolyChannelValidateServiceImpl" />
+        </validate>
+    </channel>
+    
+
+    
+    <!-- UC单机 -->
+   	<channel id="68" group="ali">
+		<validate version="2.0.8" default="true">
+			<required>
+				<request>token</request>
+				<config>goUrl,appkey,gameid</config>
+			</required>
+			<callback class="UCChannelValidateServiceImpl" />
+		</validate>
+	</channel>
+	
+	<!-- 爱奇艺聚合 -->
+   	<channel id="69" group="iqiyi">
+		<validate version="1.0.1" default="true">
+			<required>
+				<request>token,appId,channelId</request>
+				<config>goUrl,secretkey</config>
+			</required>
+			<callback class="IqiyiChannelValidateServiceImpl" />
+		</validate>
+	</channel>
+	
+	<!-- 9377 -->
+   	<channel id="71" group="C9377">
+		<validate version="3.0.0" default="true">
+			<required>
+				<request>token,userName,timeStamp</request>
+				<config>secretkey</config>
+			</required>
+			<callback class="C9377ChannelValidateServiceImpl" />
+		</validate>
+	</channel>
+	
+	<!-- 游戏猫 -->
+   	<channel id="72" group="youximao">
+		<validate version="3.0.0" default="true">
+			<required>
+				<request>openId</request>
+				<config>goUrl</config>
+			</required>
+			<callback class="YouximaoChannelValidateServiceImpl" />
+		</validate>
+	</channel>
+	
+	<!-- 易接渠道 -->
+   	<channel id="73" group="yijie">
+		<validate version="1.0.0" default="true">
+			<required>
+				<request>token,app,sdk</request>
+				<config>goUrl</config>
+			</required>
+			<callback class="YijieChannelValidateServiceImpl" />
+		</validate>
+		<validate version="2.7.0" ref="1.0.0"></validate>
+	</channel>
+	<!-- 花生互娱渠道 -->
+	<channel id="74" group="huashenghuyu">
+		<validate version="2.0.0" default="true">
+			<required>
+				<request>token</request>
+				<config>goUrl,appkey</config>
+			</required>
+			<callback class="HuaShengHuYuChannelValidateServiceImpl" />
+		</validate>
+	</channel>
+	
+    <!-- 极速渠道二次登陆认证 -->
+    <channel id="75" group="jisu">
+        <validate version="2.1.1" default="true">
+            <required>
+                <request>token</request>
+                <config>goUrl,secretkey</config>
+            </required>
+            <callback class="JisuChannelValidateServiceImpl" />
+        </validate>
+    </channel>
+	
+    <!-- 一点渠道二次登陆认证 -->
+    <channel id="76" group="yidian">
+        <validate version="2.0.0" default="true">
+            <required>
+                <request>token</request>
+                <config>goUrl,appid,appkey</config>
+            </required>
+            <callback class="YidianChannelValidateServiceImpl" />
+        </validate>
+    </channel>
+	
+</service>

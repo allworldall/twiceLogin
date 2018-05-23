@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 渠道id唯一，default表示未找到对应版本时，以此版本做验证， group对应包名-->
+<service namespace= "com.linekong.login.auth.service.impl">
+	<channel id="37" group="samsung">
+		<sign version="4.0.2" default="true">
+			<required>
+				<request>packageName</request>
+				<config>privatekey,appid</config>
+			</required>
+			<callback class="SamSungChannelSignServiceImpl" />
+		</sign>
+	</channel>
+</service>
